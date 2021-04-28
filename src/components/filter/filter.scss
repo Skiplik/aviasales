@@ -1,0 +1,59 @@
+@import "../../scss-variables/colors";
+@import "../../scss-variables/sizes";
+
+.filter {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: map-get($colors, 'white');
+    box-shadow: 0 2px 8px map-get($colors, 'shadow');
+
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    color: map-get($colors, 'grey');
+
+    @media (min-width: $breakpoint-tablet) {
+        width: 232px;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        height: 30px;
+
+        @media (min-width: $breakpoint-tablet) {
+            height: 40px;
+        }
+
+        &:hover {
+            background-color: map-get($colors, 'white-1');
+        }
+    }
+
+    &__checkbox {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+
+        border: 1px solid map-get($colors, 'blue');
+        border-radius: 2px;
+    }
+}

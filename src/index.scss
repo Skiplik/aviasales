@@ -1,0 +1,18 @@
+@import-normalize;
+@import "fonts";
+@import "./scss-variables/sizes";
+@import "./scss-variables/colors";
+
+* {
+    box-sizing: border-box;
+    font-family: Open Sans, serif;
+    font-style: normal;
+}
+
+html, body, #app {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: map-get($colors, 'background');
+}

@@ -1,0 +1,54 @@
+@import "../../scss-variables/colors";
+@import "../../scss-variables/sizes";
+
+.btn {
+  background-color: map-get($colors, 'blue');
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  outline: 0;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: map-get($colors, 'white');
+
+  &:hover, &:focus {
+    opacity: 0.8;
+  }
+
+  &--show-more {
+    @media (min-width: $breakpoint-tablet) {
+      width: 502px;
+    }
+  }
+
+  &--tabs {
+    flex: 1 1 168px;
+    border-radius: 0;
+    background-color: map-get($colors, 'white');
+    color: map-get($colors, 'grey');
+    border: 1px solid map-get($colors, 'light-grey');
+
+    &:first-child {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      border-right: 0;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      border-left: 0;
+    }
+
+    &:hover, &-active {
+      border: 0;
+      color: map-get($colors, 'white');
+      background-color: map-get($colors, 'blue');
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import '../../scss-variables/colors';
+
+.ticket {
+    background: map-get($colors, 'white');
+    box-shadow: 0 2px 8px map-get($colors, 'shadow');
+    border-radius: 5px;
+    padding: 20px;
+
+    &__cost {
+        font-size: 24px;
+        line-height: 24px;
+        color: map-get($colors, 'blue');
+    }
+
+    &__company {
+        margin-left: auto;
+    }
+
+    &__row {
+        display: flex;
+        margin-bottom: 10px;
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+
+        &:first-child {
+            margin-bottom: 20px;
+        }
+
+        &--header {
+            margin-bottom: 0;
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: map-get($colors, 'light-grey-1');
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__cell {
+        flex: 1;
+    }
+}

@@ -1,0 +1,40 @@
+@import "../../scss-variables/sizes";
+
+.app {
+  display: flex;
+  flex-direction: column;
+
+  &__logo {
+    margin: 20px auto;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin: 50px auto;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: $breakpoint-mobile;
+    margin: 0 auto;
+
+    @media (min-width: $breakpoint-tablet) {
+      flex-direction: row;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 754px;
+    }
+  }
+
+  &__filter {
+    @media (min-width: $breakpoint-tablet) {
+      margin-right: 20px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 20px;
+    }
+  }
+}
