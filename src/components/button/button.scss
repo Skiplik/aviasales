@@ -7,6 +7,7 @@
   border-radius: 5px;
   border: none;
   outline: 0;
+  cursor: pointer;
 
   font-weight: 600;
   font-size: 12px;
@@ -31,24 +32,20 @@
     border-radius: 0;
     background-color: map-get($colors, 'white');
     color: map-get($colors, 'grey');
-    border: 1px solid map-get($colors, 'light-grey');
+    border: 1px solid map-get($colors, 'white');
 
     &:first-child {
-      border-bottom-left-radius: 5px;
-      border-top-left-radius: 5px;
-      border-right: 0;
+      border-radius: 5px 0 0 5px;
     }
 
     &:last-child {
-      border-bottom-right-radius: 5px;
-      border-top-right-radius: 5px;
-      border-left: 0;
+      border-radius: 0 5px 5px 0;
     }
 
     &:hover, &-active {
-      border: 0;
       color: map-get($colors, 'white');
       background-color: map-get($colors, 'blue');
+      border-color: map-get($colors, 'blue');
     }
   }
 }

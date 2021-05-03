@@ -1,24 +1,33 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { setFilter, TransferCountFilter } from './actions';
 
 import './filter.scss';
 
-import { FILTER_0, FILTER_1, FILTER_2, FILTER_3, FILTER_ALL } from '../../constants';
-
 const filtersKey = [
-    { id: 1, key: FILTER_ALL, title: 'Все' },
-    { id: 2, key: FILTER_0, title: 'Без пересадок' },
-    { id: 3, key: FILTER_1, title: '1 пересадка' },
-    { id: 4, key: FILTER_2, title: '2 пересадки' },
-    { id: 5, key: FILTER_3, title: '3 пересадки' },
+    { id: TransferCountFilter.ALL, title: 'Все' },
+    { id: TransferCountFilter.ZERO, title: 'Без пересадок' },
+    { id: TransferCountFilter.ONE, title: '1 пересадка' },
+    { id: TransferCountFilter.TWO, title: '2 пересадки' },
+    { id: TransferCountFilter.THREE, title: '3 пересадки' },
 ];
 
-const Filter = () => {
+const Filter = ({ filters, set }) => {
     const renderFilters = () =>
         filtersKey.map((filter) => {
             return (
-                <li key={filter.id} className="filter__item">
-                    <input className="filter__checkbox" type="checkbox" value={filter.key} />
-                    {filter.title}
+                <li key={filter.id}>
+                    <label className="filter__item">
+                        <input
+                            className="filter__checkbox"
+                            type="checkbox"
+                            value={filter.id}
+                            checked={filters.includes(filter.id)}
+                            onChange={({ target: { value } }) => set(value)}
+                        />
+                        {filter.title}
+                    </label>
                 </li>
             );
         });
@@ -31,4 +40,11 @@ const Filter = () => {
     );
 };
 
-export default Filter;
+Filter.propTypes = {
+    filters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    set: PropTypes.func.isRequired
+};
+
+const mapStateToProps = ({ filters }) => ({ filters });
+
+export default connect(mapStateToProps, { set: setFilter })(Filter);
