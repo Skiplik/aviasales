@@ -42,7 +42,7 @@ const Filter = ({ filters, set }) => {
 
 Filter.propTypes = {
     filters: PropTypes.arrayOf(PropTypes.string).isRequired,
-    set: PropTypes.func.isRequired
+    set: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ filters }) => ({ filters });

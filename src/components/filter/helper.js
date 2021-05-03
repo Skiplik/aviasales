@@ -7,14 +7,12 @@ export const toggleFilter = (state, filter) => {
     }
 
     if (!state.includes(filter)) {
-        return state.length >= initialState.length - 2
-            ? initialState
-            : [ ...state, filter ];
+        return state.length >= initialState.length - 2 ? initialState : [...state, filter];
     }
 
     if (state.length === initialState.length) {
-        return state.filter(_filter => ![initialState[0], filter].includes(_filter));
+        return state.filter((_filter) => ![initialState[0], filter].includes(_filter));
     }
 
-    return state.filter(_filter => _filter !== filter);
-}
+    return state.filter((_filter) => _filter !== filter);
+};

@@ -8,11 +8,7 @@ const Button = (props) => {
     const classList = [className, 'btn', ...btnClasses.map((name) => `btn--${name}`)];
 
     return (
-        <button
-            className={classList.join(' ')}
-            type="button"
-            onClick={click}
-        >
+        <button className={classList.join(' ')} type="button" onClick={click}>
             {title}
         </button>
     );
@@ -22,14 +18,14 @@ Button.defaultProps = {
     title: 'Нажми',
     btnClasses: [],
     className: '',
-    click: () => {}
+    click: () => {},
 };
 
 Button.propTypes = {
     title: PropTypes.string,
     btnClasses: PropTypes.arrayOf(PropTypes.string),
     className: PropTypes.string,
-    click: PropTypes.func
+    click: PropTypes.func,
 };
 
 export default Button;

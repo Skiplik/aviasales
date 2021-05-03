@@ -10,33 +10,24 @@ import './tabs.scss';
 const TABS = [
     { id: SortTicketsKey.CHEAP, title: 'Самый дешевый' },
     { id: SortTicketsKey.FAST, title: 'Самый быстрый' },
-    { id: SortTicketsKey.OPTIMAL, title: 'Оптимальный' }
-]
+    { id: SortTicketsKey.OPTIMAL, title: 'Оптимальный' },
+];
 
 const Tabs = ({ sort, set }) => {
-    const tabs = TABS.map(tab => {
+    const tabs = TABS.map((tab) => {
         const classes = ['tabs'];
 
         if (tab.id === sort) classes.push('tabs-active');
 
-        return <Button
-            key={tab.id}
-            btnClasses={classes}
-            title={tab.title}
-            click={() => set(tab.id)}
-        />
+        return <Button key={tab.id} btnClasses={classes} title={tab.title} click={() => set(tab.id)} />;
     });
 
-    return (
-        <div className="tabs">
-            { tabs }
-        </div>
-    );
+    return <div className="tabs">{tabs}</div>;
 };
 
 Tabs.propTypes = {
     sort: PropTypes.string.isRequired,
-    set: PropTypes.func.isRequired
+    set: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ sort }) => ({ sort });

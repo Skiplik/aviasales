@@ -5,7 +5,7 @@ export const SET_SORT = 'SET';
 export const SortTicketsKey = {
     CHEAP: 'CHEAP',
     FAST: 'FAST',
-    OPTIMAL: 'OPTIMAL'
+    OPTIMAL: 'OPTIMAL',
 };
 
 // initialState
@@ -14,5 +14,5 @@ export const initialState = SortTicketsKey.CHEAP;
 // actions creator
 export const setSort = (payload) => ({
     type: SET_SORT,
-    payload
+    payload,
 });

@@ -7,7 +7,7 @@ export const TransferCountFilter = {
     ZERO: 'ZERO',
     ONE: 'ONE',
     TWO: 'TWO',
-    THREE: 'THREE'
+    THREE: 'THREE',
 };
 
 // initialState
@@ -16,5 +16,5 @@ export const initialState = Object.values(TransferCountFilter);
 // actions creator
 export const setFilter = (payload) => ({
     type: TOGGLE_FILTER,
-    payload
+    payload,
 });
