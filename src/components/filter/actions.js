@@ -1,5 +1,5 @@
 // action types
-export const TOGGLE_FILTER = 'TOGGLE';
+export const TOGGLE_FILTER = 'TOGGLE_FILTER';
 
 // keys for filter tickets
 export const TransferCountFilter = {

@@ -1,5 +1,5 @@
 // action types
-export const SET_SORT = 'SET';
+export const SET_SORT = 'SET_SORT';
 
 // keys for sorting tickets
 export const SortTicketsKey = {
