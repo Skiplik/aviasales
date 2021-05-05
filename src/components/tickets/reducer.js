@@ -1,7 +1,25 @@
-import { initialState, SET_TICKETS, STOP_LOAD } from './actions';
+import {
+    initialState,
+    SET_TICKETS,
+    STOP_LOAD,
+    FETCH_TOGGLE,
+    SET_ERROR
+} from './actions';
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case FETCH_TOGGLE:
+            return {
+                ...state,
+                isFetch: !state.isFetch,
+            };
+
+        case SET_ERROR:
+            return {
+                ...state,
+                isError: action.payload,
+            };
+
         case STOP_LOAD:
             return {
                 ...state,
