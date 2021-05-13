@@ -12,6 +12,7 @@ export const initialState = {
     isError: false,
     fullList: true,
     list: [],
+    show: 20,
 };
 
 // actions creator
@@ -21,12 +22,12 @@ export const setTickets = (payload) => ({
 });
 
 export const fetchToggle = () => ({
-    type: FETCH_TOGGLE
+    type: FETCH_TOGGLE,
 });
 
 export const setError = (payload) => ({
     type: SET_ERROR,
-    payload
+    payload,
 });
 
 export const stopLoad = (payload) => ({
